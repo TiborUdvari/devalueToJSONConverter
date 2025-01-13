@@ -9,7 +9,11 @@
       name="description"
       content="Convert devalue values as seen in Astro Actions to JSON online."
     />
-    <script defer src="https://umami.tiborudvari.com/script.js" data-website-id="9afd6b7e-4274-4d61-9b05-ac1586f8e1c6"></script>
+    <script
+      defer
+      src="https://umami.tiborudvari.com/script.js"
+      data-website-id="9afd6b7e-4274-4d61-9b05-ac1586f8e1c6"
+    ></script>
   </head>
   <body>
     <main
@@ -72,6 +76,15 @@
           outputEl.value = `Error: ${err.message}`;
         }
       });
+
+      const example = `[{"firstname":1,"lastname":2,"email":3},"Dizzy","McSnort","dizzy.mcsnort@clownfoolery.org"]`;
+      inputEl.value = example;
+
+      const event = new Event("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+      inputEl.dispatchEvent(event);
     </script>
   </body>
 </html>
